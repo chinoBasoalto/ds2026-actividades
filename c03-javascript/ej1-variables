@@ -1,0 +1,18 @@
+//Declaro constantes
+const nombre = "Ezequiel";
+const edad = 20;
+const materias = "Desarrollo de Software";
+//Mensaje en pantalla con template literal
+console.log(`Hola, mi nombre es ${nombre}, tengo ${edad} años y estudio ${materias}.`);
+
+//Declaro variable con let
+let contador = 0;
+
+//Le sumo 1 3 veces
+
+contador += 1;
+contador += 1;
+contador += 1;
+
+//Muestro resultado
+console.log(`El contador tiene el valor: ${contador}`);
