@@ -1,0 +1,39 @@
+function calcularPrecioFinal(monto, medioPago) {
+   let descuento = 0;
+
+   //Aplico el descuento segun el monto correspondienet
+   if (monto >= 200 && monto <= 400 ) {
+
+      if (medioPago === "E") {
+         descuento = 0.30;
+      } else if (medioPago === "D") {
+         descuento = 0.20;
+      } else if (medioPago === "C") {
+         descuento = 0.10;
+      } 
+   } else if (monto > 400) {
+      descuento = 0.40;
+   }
+
+   //Calculo del precio final
+   const ahorro = monto * descuento;
+   const final = monto + ahorro;
+
+   return final;
+}
+
+//Pruebo con 5 combinacinoes
+const pruebas = [
+   { m: 150, p: "E" },
+   { m: 250, p: "D" },
+   { m: 250, p: "C" },
+   { m: 350, p: "E" },
+   { m: 500, p: "D" }
+
+];
+
+pruebas,forEach(item => {
+   const precioFinal = calcularPrecioFinal(item.m, item.p);
+   console.log(`Monto: ${item.m}, Medio de Pago: ${item.p}, Precio Final: ${precioFinal}`);
+
+});
