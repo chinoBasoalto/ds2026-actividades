@@ -1,0 +1,42 @@
+//Clasificacion de notas
+function clasificarNota(nota) {
+    if (nota >= 6) {
+        return "Promocionado";
+    }
+    if (nota >= 4 && nota < 6) {
+        return "Aprobado";
+    } else {
+        return "Nota inválida";
+    }
+}
+
+//Dia de la semana
+function diaSemana(dia) {
+    switch (dia) {
+        case 1:
+            return "Lunes";
+        case 2:
+            return "Martes";
+        case 3:
+            return "Miércoles";
+        case 4:
+            return "Jueves";
+        case 5:
+            return "Viernes";
+        case 6:
+            return "Sábado";
+        case 7:
+            return "Domingo";
+        default:
+            return "Número de día inválido";
+    }
+}
+
+//Ejemplo de uso
+console.log(clasificarNota(7)); // Promocionado
+console.log(clasificarNota(5)); // Aprobado
+console.log(clasificarNota(3)); // Nota inválida
+
+console.log(diaSemana(1)); // Lunes
+console.log(diaSemana(5)); // Viernes
+console.log(diaSemana(8)); // Número de día inválido
