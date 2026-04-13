@@ -1,0 +1,35 @@
+// Arrays y bucles
+const numeros = [12, 5, 8, 20, 3, 15 , 7, 10];
+
+let suma = 0;
+let mayor = numeros [0];
+let menor = numeros [0];
+
+for (let i = 0; i < numeros.length; i++) {
+   const num = numeros[i];
+   suma += num;
+
+   if (num > mayor) {
+      mayor = num;
+   }
+
+   if (num < menor) {
+      menor = num;
+   }
+}
+
+const promedio = suma / numeros.length;
+
+console.log(`Suma: ${suma}, Promedio: ${promedio}, Mayor: ${mayor}, Menor: ${menor}`);
+
+//Funcion generarAstericos
+function generarAstericos(n) {
+   let resultado = "";
+   for (let i = 0; i < n; i++) {
+      resultado += "*";
+   }
+   return resultado;
+}
+
+//Prueba
+console.log(`Astericos(5): ${generarAstericos(5)}`); 
