@@ -1,10 +1,10 @@
-// Obtenemos los elementos y les asignamos su tipo específico
+// Selección de elementos con tipado
 const inputAltura = document.getElementById("alturaInput") as HTMLInputElement;
 const botonGenerar = document.getElementById("generarBtn") as HTMLButtonElement;
 const contenedorResultado = document.getElementById("resultado") as HTMLElement;
 
-// Función con tipado en el parámetro (number)
-function generarAsteriscos(altura: number): void {
+// Función tipada: recibe número, no devuelve nada (void)
+function dibujarArbol(altura: number): void {
     let contenido = "";
     for (let i = 1; i <= altura; i++) {
         contenido += "*".repeat(i) + "\n";
@@ -12,14 +12,14 @@ function generarAsteriscos(altura: number): void {
     contenedorResultado.innerText = contenido;
 }
 
-// Evento
+// Evento del botón
 botonGenerar.addEventListener("click", () => {
-    // Convertimos el value a número
-    const altura = parseInt(inputAltura.value);
-    
-    if (!isNaN(altura)) {
-        generarAsteriscos(altura);
+    const valor = parseInt(inputAltura.value);
+
+    if (!isNaN(valor) && valor > 0) {
+        dibujarArbol(valor);
     } else {
-        alert("Por favor, ingresa un número válido");
+        alert("Por favor, ingresa un número válido mayor a 0");
     }
 });
+export {};
