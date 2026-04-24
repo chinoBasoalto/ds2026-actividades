@@ -1,32 +1,25 @@
-const boton = document.getElementById("generarBtn");
-const input = document.getElementById("alturaInput");
-const resultado = document.getElementById("resultado");
+// Obtenemos los elementos y les asignamos su tipo específico
+const inputAltura = document.getElementById("alturaInput") as HTMLInputElement;
+const botonGenerar = document.getElementById("generarBtn") as HTMLButtonElement;
+const contenedorResultado = document.getElementById("resultado") as HTMLElement;
 
-boton.addEventListener("click", () => {
-   const altura = parseInt(input.value);
-
-   //Validacion
-   if (isNaN (altura) || altura <= 1) { 
-      resultado.innerText = "Error: Por favor, ingrese un número entero mayor a 1.";
-      return;
-
-   }
-
-   //Generar el medio árbol
-    let arbol = "";
+// Función con tipado en el parámetro (number)
+function generarAsteriscos(altura: number): void {
+    let contenido = "";
     for (let i = 1; i <= altura; i++) {
-        arbol += generarAsteriscos(i) + "\n";
+        contenido += "*".repeat(i) + "\n";
     }
-
-    resultado.innerText = arbol;
-
-});
-
-//Reutilizo la lógica del ejercicio anterior para generar asteriscos
-function generarAstericos(n) {
-   let linea = "";
-   for (let i = 0; i < n; i++) {
-      linea += "*";
-   }
-   return linea;
+    contenedorResultado.innerText = contenido;
 }
+
+// Evento
+botonGenerar.addEventListener("click", () => {
+    // Convertimos el value a número
+    const altura = parseInt(inputAltura.value);
+    
+    if (!isNaN(altura)) {
+        generarAsteriscos(altura);
+    } else {
+        alert("Por favor, ingresa un número válido");
+    }
+});
