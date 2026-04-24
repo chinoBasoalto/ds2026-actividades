@@ -3,32 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2 - Catálogo de Libros</title>
-    <style>
-        body { font-family: sans-serif; padding: 20px; background-color: #f9f9f9; }
-        .controles { margin-bottom: 20px; background: #eee; padding: 15px; border-radius: 8px; }
-        #lista-libros { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
-        .card-libro { border: 1px solid #ccc; padding: 10px; background: white; border-radius: 5px; }
-        #stats { margin-top: 20px; font-weight: bold; color: #2c3e50; }
-        input, button { padding: 8px; margin-right: 5px; cursor: pointer; }
-    </style>
+    <title>Ejercicio 2 - Catálogo</title>
 </head>
 <body>
 
-    <h1>Catálogo de Libros</h1>
+    <h1>Catálogo</h1>
 
-    <div class="controles">
-        <input type="text" id="autorInput" placeholder="Nombre del autor...">
-        <button id="btnFiltrar">Filtrar</button>
-        
-        <button id="btnDisponibles">Solo disponibles</button>
-        <button id="btnTodos">Ver todos</button>
-    </div>
+    <input type="text" id="inputAutor" placeholder="Nombre del autor">
+    <button id="btnFiltrar">Filtrar</button>
+    <button id="btnDisponibles">Solo disponibles</button>
+    <button id="btnTodos">Ver todos</button>
 
     <div id="lista-libros"></div>
 
     <div id="stats"></div>
 
-    <script type="module" src="app.js"></script> 
+    <script type="module" src="app.js"></script>
+
 </body>
 </html>
