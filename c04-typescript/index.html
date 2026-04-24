@@ -2,12 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Clase 3 - Ejercicio 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - TypeScript</title>
+    <style>
+        /* Agregamos un poco de estilo para que no se vea negro */
+        body {
+            font-family: sans-serif;
+            background-color: white; /* Forzamos fondo blanco */
+            color: black;            /* Forzamos texto negro */
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Generador de Árbol</h2>
-    <input type="number" id="alturaInput" placeholder="Ingrese altura">
-    <button id="generarBtn">Generar</button>
+    <h2>Generador de Árbol (Versión TypeScript)</h2>
+    
+    <label for="alturaInput">Altura del árbol:</label>
+    <input type="number" id="alturaInput" placeholder="Ej: 5">
+    <button id="generarBtn">Dibujar</button>
+    
+    <hr>
+    <h3>Resultado:</h3>
     <pre id="resultado"></pre>
 
     <script src="app.js"></script>
