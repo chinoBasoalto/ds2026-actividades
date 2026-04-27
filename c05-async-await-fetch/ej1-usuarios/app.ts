@@ -8,7 +8,7 @@ interface Usuario {
 async function obtenerUsuarios(): Promise<Usuario[]> {
     try {
         const res = await fetch('https://jsonplaceholder.typicode.com/users');
-        const data: Usuario[] = await res.json();
+        const data = await res.json() as Usuario[];
         return data;
     } catch (e) {
         console.log("error", e);
