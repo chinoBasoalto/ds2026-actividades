@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 3 - Buscador de Libros</title>
+    <style>
+        /* Espacio entre tarjetas */
+        .libro-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        #error-busqueda { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Buscador de Libros</h1>
+    
+    <input type="text" id="input-busqueda" placeholder="Ej: El Quijote">
+    <button id="boton-buscar">Buscar</button>
+    
+    <div id="error-busqueda"></div>
+    <div id="contenedor-libros"></div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
