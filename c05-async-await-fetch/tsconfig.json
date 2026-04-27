@@ -11,9 +11,9 @@
     "target": "esnext",
     "types": [],
     // For nodejs:
-   "lib": ["DOM", "ES6", "DOM.Iterable"]
+   "lib": ["DOM", "ES6", "DOM.Iterable"],
     // "types": ["node"],
-    // and npm install -D @types/node
+    // and npm install -D @types/node,
 
     // Other Outputs
     "sourceMap": true,
