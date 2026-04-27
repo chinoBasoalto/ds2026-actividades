@@ -22,3 +22,4 @@ obtenerUsuarios().then(users => {
         console.log(u.name, u.email);
     });
 });
+export {};
