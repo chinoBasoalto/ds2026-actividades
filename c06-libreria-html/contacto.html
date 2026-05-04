@@ -52,4 +52,49 @@
     </div>
   </div>
 </nav>
+
+<main class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 shadow-lg p-4 rounded bg-light">
+            <h2 class="text-center mb-4">Contactanos</h2>
+            <p class="text-center text-muted mb-4">Completá el formulario y te responderemos a la brevedad.</p>
+            
+            <form id="form-contacto">
+                <!-- Nombre -->
+                <div class="mb-3">
+                    <label for="nombre" class="form-label fw-bold">Nombre completo</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ej: Maria García" required>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-bold">Correo electrónico</label>
+                    <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
+                </div>
+
+                <!-- Asunto (Select) -->
+                <div class="mb-3">
+                    <label for="asunto" class="form-label fw-bold">Asunto</label>
+                    <select class="form-select" id="asunto" required>
+                        <option value="" selected disabled>Seleccioná una opción...</option>
+                        <option value="consulta">Consulta</option>
+                        <option value="reclamo">Reclamo</option>
+                        <option value="sugerencia">Sugerencia</option>
+                    </select>
+                </div>
+
+                <!-- Mensaje (Textarea) -->
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label fw-bold">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribí tu mensaje aquí..." required></textarea>
+                </div>
+
+                <!-- Botón de Enviar -->
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">Enviar Mensaje</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
 </html>
