@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Tu CSS propio -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -22,7 +22,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Tu JS propio -->
-    <script src="js/data.js"></script>
+    <script src="/js/data.js"></script>
 </body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
@@ -52,4 +52,28 @@
     </div>
   </div>
 </nav>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Explorar Catálogo</h2>
+    
+    <!-- Contenedor del Buscador -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-6">
+            <div class="input-group shadow-sm">
+                <input type="text" id="input-busqueda" class="form-control" placeholder="Escribí un libro o autor...">
+                <button class="btn btn-primary" id="boton-buscar" type="button">Buscar</button>
+            </div>
+            <!-- Aquí aparecerán mensajes de error si no escribe nada -->
+            <div id="error-busqueda" class="text-danger small mt-2"></div>
+        </div>
+    </div>
+
+    <!-- Contenedor donde se mostrarán los resultados -->
+    <div id="contenedor-libros" class="row g-4">
+        <p class="text-center text-muted">Usá el buscador para encontrar libros en Open Library.</p>
+    </div>
+</div>
+
+<!-- IMPORTANTE: El script al final del body -->
+<script src="js/data.js"></script>
 </html>
