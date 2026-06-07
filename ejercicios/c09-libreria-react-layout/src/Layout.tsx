@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import HeaderLibreria from './HeaderLibreria';
+import HeaderLibreria from './components/Layout/Header';
 
 interface LayoutProps {
     children: ReactNode;

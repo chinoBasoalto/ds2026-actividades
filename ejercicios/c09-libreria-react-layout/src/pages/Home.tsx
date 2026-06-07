@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import HeaderLibreria from '../HeaderLibreria'; // Corregimos rutas relativas
 import BannerPromo from '../Banner';
 import LibroCard from '../components/LibroCard';
 import type { Libro } from '../types/libro';
@@ -17,28 +16,25 @@ function Home() {
     ];
 
     return (
-        <div className="bg-white min-vh-100 pb-5">
-            <HeaderLibreria />
-            <Container>
-                <BannerPromo />
-                <h2 className="my-4 text-dark fw-bold position-relative pb-2" style={{ borderBottom: '2px solid #ffc107', width: 'fit-content' }}>
-                    Nuestro Catálogo
-                </h2>
-                <Row xs={1} sm={2} md={3} lg={4} className="g-4">
-                    {catálogoLibros.map((libro) => (
-                        <Col key={libro.id}>
-                            <LibroCard 
-                                titulo={libro.titulo}
-                                autor={libro.autor}
-                                precio={libro.precio}
-                                genero={libro.genero}
-                                imagen={libro.imagen}
-                            />
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
-        </div>
+        <Container className="mt-4">
+            <BannerPromo />
+            <h2 className="my-4 text-dark fw-bold position-relative pb-2" style={{ borderBottom: '2px solid #ffc107', width: 'fit-content' }}>
+                Nuestro Catálogo
+            </h2>
+            <Row xs={1} sm={2} md={3} lg={4} className="g-4">
+                {catálogoLibros.map((libro) => (
+                    <Col key={libro.id}>
+                        <LibroCard 
+                            titulo={libro.titulo}
+                            autor={libro.autor}
+                            precio={libro.precio}
+                            genero={libro.genero}
+                            imagen={libro.imagen}
+                        />
+                    </Col>
+                ))}
+            </Row>
+        </Container>
     );
 }
 
