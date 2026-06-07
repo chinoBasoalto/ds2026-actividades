@@ -1,4 +1,4 @@
-import { useState, type ElementType } from 'react';
+import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Heart, HeartFill } from 'react-bootstrap-icons';
@@ -35,7 +35,7 @@ function LibroCard({ id, titulo, autor, precio, genero, imagen }: Libro) {
                         <span className="fs-4 fw-bold text-primary">${precio}</span>
                     </div>
                     {/* Botón dinámico exigido por la pauta del Hito 3 */}
-                    
+
                     {/* El Link maneja la navegación */}
                     <Link to={`/libros/${id}`} className="text-decoration-none">
                         {/* El Botón adentro maneja el diseño visual */}
