@@ -5,7 +5,7 @@ import BannerPromo from '../Banner';
 import LibroCard from '../components/LibroCard';
 import type { Libro } from '../types/libro';
 
-function Home() {
+function Catalogo() {
     const catálogoLibros: Libro[] = [
         { id: 1, titulo: "Clean Code", autor: "Robert C. Martin", precio: 45000, genero: "Programación", imagen: "https://images-na.ssl-images-amazon.com/images/I/41xSh4314sL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg" },
         { id: 2, titulo: "Dune", autor: "Frank Herbert", precio: 32000, genero: "Ciencia Ficción", imagen: "https://images-na.ssl-images-amazon.com/images/I/41U6v00mEBL._SX322_BO1,204,203,200_QL40_FMwebp_.jpg" },
@@ -24,12 +24,8 @@ function Home() {
             <Row xs={1} sm={2} md={3} lg={4} className="g-4">
                 {catálogoLibros.map((libro) => (
                     <Col key={libro.id}>
-                        <LibroCard 
-                            titulo={libro.titulo}
-                            autor={libro.autor}
-                            precio={libro.precio}
-                            genero={libro.genero}
-                            imagen={libro.imagen} id={0}                        />
+                        {/* El truco mágico: usando {...libro} nos aseguramos de heredar el ID real (1, 2, 3...) */}
+                        <LibroCard {...libro} />
                     </Col>
                 ))}
             </Row>
@@ -37,4 +33,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Catalogo;

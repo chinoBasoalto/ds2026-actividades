@@ -4,18 +4,17 @@ import Nav from 'react-bootstrap/Nav';
 import { BookHalf } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 
-function HeaderLibreria() {
+function Header() {
     return (
-        <Navbar bg="dark" variant="dark" expand="lg" className="mb-4 shadow">
+        <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm">
             <Container>
-                {/* Cambiado a Link de React Router */}
+                {/* as={Link} para evitar recargas molestas */}
                 <Navbar.Brand as={Link} to="/" className="d-flex align-items-center gap-2 fw-bold fs-3 text-warning">
                     <BookHalf /> Ateneo React
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto fs-5">
-                        {/* Enlaces de navegación con 'as={Link} to="..."' */}
                         <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                         <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
                     </Nav>
@@ -25,4 +24,4 @@ function HeaderLibreria() {
     );
 }
 
-export default HeaderLibreria;
+export default Header;

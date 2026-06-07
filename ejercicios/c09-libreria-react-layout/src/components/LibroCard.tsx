@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, type ElementType } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { Heart, HeartFill, CartPlus } from 'react-bootstrap-icons';
-import type { Libro } from '../types/libro'; // <-- Importamos el tipo global
- // <-- Importamos el tipo global
+import { Heart, HeartFill } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom'; // Importamos Link
+import type { Libro } from '../types/libro';
 
-function LibroCard({ titulo, autor, precio, genero, imagen }: Omit<Libro, 'id'>) {
+function LibroCard({ id, titulo, autor, precio, genero, imagen }: Libro) {
     const [meGusta, setMeGusta] = useState(false);
 
     return (
@@ -27,14 +27,22 @@ function LibroCard({ titulo, autor, precio, genero, imagen }: Omit<Libro, 'id'>)
             
             <Card.Body className="d-flex flex-column">
                 <span className="badge bg-secondary align-self-start mb-2">{genero}</span>
-                <Card.Title className="fs-5 fw-bold text-dark text-truncate">{titulo}</Card.Title>
+                <Card.Title className="fs-5 fw-bold text-dark text-truncate mb-1">{titulo}</Card.Title>
                 <Card.Text className="text-muted small mb-3">Por: {autor}</Card.Text>
                 
-                <div className="mt-auto d-flex justify-content-between align-items-center">
-                    <span className="fs-4 fw-bold text-primary">${precio}</span>
-                    <Button variant="outline-primary" size="sm" className="d-flex align-items-center gap-1">
-                        <CartPlus /> Agregar
-                    </Button>
+                <div className="mt-auto">
+                    <div className="d-flex justify-content-between align-items-center mb-3">
+                        <span className="fs-4 fw-bold text-primary">${precio}</span>
+                    </div>
+                    {/* Botón dinámico exigido por la pauta del Hito 3 */}
+                    
+                    {/* El Link maneja la navegación */}
+                    <Link to={`/libros/${id}`} className="text-decoration-none">
+                        {/* El Botón adentro maneja el diseño visual */}
+                        <Button variant="outline-warning" className="w-100 fw-semibold text-dark">
+                            Ver más
+                        </Button>
+                    </Link>
                 </div>
             </Card.Body>
         </Card>
