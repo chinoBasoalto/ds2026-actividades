@@ -1,0 +1,106 @@
+### 1. Registro Exitoso (201)
+POST http://localhost:3000/api/auth/registro
+Content-Type: application/json
+
+{
+  "email": "nuevo@libreria.com",
+  "password": "password123",
+  "nombre": "Usuario Nuevo"
+}
+
+### 2. Registro Duplicado Error 409
+POST http://localhost:3000/api/auth/registro
+Content-Type: application/json
+
+{
+  "email": "admin@libreria.com",
+  "password": "password123",
+  "nombre": "Admin Repetido"
+}
+
+### 3. Login Exitoso Admin (Captura de Token)
+# @name loginAdmin
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@libreria.com",
+  "password": "12345678"
+}
+
+### Guardar Token Admin
+@tokenAdmin = {{loginAdmin.response.body.token}}
+
+### 4. Login Exitoso Cliente
+# @name loginCliente
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "cliente@libreria.com",
+  "password": "12345678"
+}
+
+### Guardar Token Cliente
+@tokenCliente = {{loginCliente.response.body.token}}
+
+### 5. Login Fallido - Email Incorrecto (401)
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "noexiste@libreria.com",
+  "password": "12345678"
+}
+
+### 6. Login Fallido - Password Incorrecto (401)
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@libreria.com",
+  "password": "incorrecta"
+}
+
+### 7. GET /api/auth/yo (200 OK con Token)
+GET http://localhost:3000/api/auth/yo
+Authorization: Bearer {{tokenAdmin}}
+
+### 8. GET Publico Libros (Sin Token OK)
+GET http://localhost:3000/api/libros
+
+### 9. POST Libro sin Token Error 401
+POST http://localhost:3000/api/libros
+Content-Type: application/json
+
+{
+  "titulo": "Libro Anonimo",
+  "anio": 2024,
+  "autorId": 1
+}
+
+### 10. POST Libro con Token CLIENTE Error 403
+POST http://localhost:3000/api/libros
+Authorization: Bearer {{tokenCliente}}
+Content-Type: application/json
+
+{
+  "titulo": "Libro de Cliente",
+  "anio": 2024,
+  "autorId": 1
+}
+
+### 11. POST Libro con Token ADMIN Exitoso 201
+POST http://localhost:3000/api/libros
+Authorization: Bearer {{tokenAdmin}}
+Content-Type: application/json
+
+{
+  "titulo": "Fervor de Buenos Aires",
+  "anio": 1923,
+  "autorId": 1
+}
+
+### 12. DELETE Libro con Token ADMIN Exitoso 204
+DELETE http://localhost:3000/api/libros/1
+Authorization: Bearer {{tokenAdmin}}
