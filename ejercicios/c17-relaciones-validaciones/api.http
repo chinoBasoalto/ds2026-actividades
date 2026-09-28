@@ -1,0 +1,44 @@
+### GET todos los libros
+GET http://localhost:3000/api/libros
+
+### GET libro por ID (Exitoso)
+GET http://localhost:3000/api/libros/1
+
+### POST libro
+POST http://localhost:3000/api/libros
+Content-Type: application/json
+
+{
+  "titulo": "El Tunel",
+  "anio": 1948,
+  "autorId": 1,
+  "categoriaIds": [1]
+}
+
+### Error 400: Validacion de datos invalidos
+POST http://localhost:3000/api/libros
+Content-Type: application/json
+
+{
+  "titulo": "",
+  "anio": 99999
+}
+
+### Error 400 / 403 / FK: Autor inexistente
+POST http://localhost:3000/api/libros
+Content-Type: application/json
+
+{
+  "titulo": "Libro Fantasma",
+  "anio": 2020,
+  "autorId": 9999
+}
+
+### Error 404: Libro no existe
+GET http://localhost:3000/api/libros/9999
+
+### DELETE libro
+DELETE http://localhost:3000/api/libros/1
+
+### GET todos los autores
+GET http://localhost:3000/api/autores
