@@ -1,0 +1,60 @@
+### Obtener todos los libros
+GET http://localhost:3000/api/libros
+
+### Obtener libro por ID
+GET http://localhost:3000/api/libros/1
+
+### Crear nuevo libro
+POST http://localhost:3000/api/libros
+Content-Type: application/json
+
+{
+  "titulo": "El Aleph",
+  "autorId": 2,
+  "anio": 1949
+}
+
+### Actualizar libro
+PUT http://localhost:3000/api/libros/1
+Content-Type: application/json
+
+{
+  "titulo": "Rayuela (Edición Especial)"
+}
+
+### Borrar libro
+DELETE http://localhost:3000/api/libros/2
+
+### Error: Libro no encontrado (404)
+GET http://localhost:3000/api/libros/999
+
+### =====================================
+
+### Obtener todos los autores
+GET http://localhost:3000/api/autores
+
+### Obtener autor por ID
+GET http://localhost:3000/api/autores/1
+
+### Crear nuevo autor
+POST http://localhost:3000/api/autores
+Content-Type: application/json
+
+{
+  "nombre": "Ernesto Sabato",
+  "nacionalidad": "Argentina"
+}
+
+### Actualizar autor
+PUT http://localhost:3000/api/autores/1
+Content-Type: application/json
+
+{
+  "nacionalidad": "Argentina / Francia"
+}
+
+### Borrar autor
+DELETE http://localhost:3000/api/autores/2
+
+### Error: Autor no encontrado (404)
+GET http://localhost:3000/api/autores/999
